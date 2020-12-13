@@ -1,0 +1,484 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		975DF8BB2579163400093800 /* Devices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF8BA2579163400093800 /* Devices.swift */; };
+		975DF8C1257A433F00093800 /* Heater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF8C0257A433F00093800 /* Heater.swift */; };
+		975DF8C3257A43D300093800 /* SensorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF8C2257A43D300093800 /* SensorProtocol.swift */; };
+		975DF8C6257A45CE00093800 /* SourceOfLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF8C5257A45CE00093800 /* SourceOfLight.swift */; };
+		975DF8C8257A45DF00093800 /* Conditioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF8C7257A45DF00093800 /* Conditioner.swift */; };
+		975DF8CA257A462000093800 /* Humidifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF8C9257A462000093800 /* Humidifier.swift */; };
+		975DF8CC257A46AD00093800 /* FertilizerDispenser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF8CB257A46AD00093800 /* FertilizerDispenser.swift */; };
+		975DF8CE257A46B800093800 /* AcidityPassiveSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF8CD257A46B800093800 /* AcidityPassiveSensor.swift */; };
+		975DF8D0257A46CE00093800 /* HumidityPassiveSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF8CF257A46CE00093800 /* HumidityPassiveSensor.swift */; };
+		975DF8D2257A46E100093800 /* TemperaturePassiveSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF8D1257A46E100093800 /* TemperaturePassiveSensor.swift */; };
+		975DF8D7257A51C300093800 /* AcidityActiveSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF8D6257A51C300093800 /* AcidityActiveSensor.swift */; };
+		975DF8D9257A51F200093800 /* HumidityActiveSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF8D8257A51F200093800 /* HumidityActiveSensor.swift */; };
+		975DF8DB257A520200093800 /* TemperatureActiveSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF8DA257A520200093800 /* TemperatureActiveSensor.swift */; };
+		975DF8DE257A762600093800 /* CultivatonCycleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF8DD257A762600093800 /* CultivatonCycleManager.swift */; };
+		975DF8E0257A7B1500093800 /* Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF8DF257A7B1500093800 /* Parameter.swift */; };
+		975DF8FA2584FC2000093800 /* ChangePlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF8F92584FC2000093800 /* ChangePlantViewController.swift */; };
+		975DF8FC2584FC3200093800 /* AddParameterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF8FB2584FC3200093800 /* AddParameterViewController.swift */; };
+		97D133A6257841B8005A3145 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D133A5257841B8005A3145 /* AppDelegate.swift */; };
+		97D133AA257841BA005A3145 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97D133A9257841BA005A3145 /* Assets.xcassets */; };
+		97D133AD257841BA005A3145 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97D133AB257841BA005A3145 /* Main.storyboard */; };
+		97D133B62578463C005A3145 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D133B52578463C005A3145 /* MainWindowController.swift */; };
+		97D133B82578469D005A3145 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D133B72578469D005A3145 /* LaunchViewController.swift */; };
+		97D133BA257847B5005A3145 /* CultivationCycleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D133B9257847B5005A3145 /* CultivationCycleViewController.swift */; };
+		97D133BC25784825005A3145 /* GreenhouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D133BB25784825005A3145 /* GreenhouseViewController.swift */; };
+		97D133BE2578483B005A3145 /* AddDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D133BD2578483B005A3145 /* AddDeviceViewController.swift */; };
+		97D133C125786A9A005A3145 /* DeviceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D133BF25786A99005A3145 /* DeviceItem.swift */; };
+		97D133C225786A9A005A3145 /* DeviceItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97D133C025786A9A005A3145 /* DeviceItem.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		975DF8BA2579163400093800 /* Devices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Devices.swift; sourceTree = "<group>"; };
+		975DF8C0257A433F00093800 /* Heater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heater.swift; sourceTree = "<group>"; };
+		975DF8C2257A43D300093800 /* SensorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorProtocol.swift; sourceTree = "<group>"; };
+		975DF8C5257A45CE00093800 /* SourceOfLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceOfLight.swift; sourceTree = "<group>"; };
+		975DF8C7257A45DF00093800 /* Conditioner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conditioner.swift; sourceTree = "<group>"; };
+		975DF8C9257A462000093800 /* Humidifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Humidifier.swift; sourceTree = "<group>"; };
+		975DF8CB257A46AD00093800 /* FertilizerDispenser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FertilizerDispenser.swift; sourceTree = "<group>"; };
+		975DF8CD257A46B800093800 /* AcidityPassiveSensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcidityPassiveSensor.swift; sourceTree = "<group>"; };
+		975DF8CF257A46CE00093800 /* HumidityPassiveSensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumidityPassiveSensor.swift; sourceTree = "<group>"; };
+		975DF8D1257A46E100093800 /* TemperaturePassiveSensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperaturePassiveSensor.swift; sourceTree = "<group>"; };
+		975DF8D6257A51C300093800 /* AcidityActiveSensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcidityActiveSensor.swift; sourceTree = "<group>"; };
+		975DF8D8257A51F200093800 /* HumidityActiveSensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumidityActiveSensor.swift; sourceTree = "<group>"; };
+		975DF8DA257A520200093800 /* TemperatureActiveSensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureActiveSensor.swift; sourceTree = "<group>"; };
+		975DF8DD257A762600093800 /* CultivatonCycleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CultivatonCycleManager.swift; sourceTree = "<group>"; };
+		975DF8DF257A7B1500093800 /* Parameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameter.swift; sourceTree = "<group>"; };
+		975DF8F92584FC2000093800 /* ChangePlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePlantViewController.swift; sourceTree = "<group>"; };
+		975DF8FB2584FC3200093800 /* AddParameterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddParameterViewController.swift; sourceTree = "<group>"; };
+		97D133A2257841B8005A3145 /* Greenhouse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Greenhouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		97D133A5257841B8005A3145 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		97D133A9257841BA005A3145 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		97D133AC257841BA005A3145 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		97D133AE257841BA005A3145 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97D133AF257841BA005A3145 /* Greenhouse.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Greenhouse.entitlements; sourceTree = "<group>"; };
+		97D133B52578463C005A3145 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		97D133B72578469D005A3145 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		97D133B9257847B5005A3145 /* CultivationCycleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CultivationCycleViewController.swift; sourceTree = "<group>"; };
+		97D133BB25784825005A3145 /* GreenhouseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenhouseViewController.swift; sourceTree = "<group>"; };
+		97D133BD2578483B005A3145 /* AddDeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDeviceViewController.swift; sourceTree = "<group>"; };
+		97D133BF25786A99005A3145 /* DeviceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceItem.swift; sourceTree = "<group>"; };
+		97D133C025786A9A005A3145 /* DeviceItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceItem.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		97D1339F257841B8005A3145 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		975DF8BC257A423D00093800 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				975DF8C4257A44BC00093800 /* Devices */,
+				975DF8BA2579163400093800 /* Devices.swift */,
+				97D133BF25786A99005A3145 /* DeviceItem.swift */,
+				97D133C025786A9A005A3145 /* DeviceItem.xib */,
+				975DF8DD257A762600093800 /* CultivatonCycleManager.swift */,
+				975DF8DF257A7B1500093800 /* Parameter.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		975DF8BD257A426000093800 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		975DF8BE257A428300093800 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				97D133BD2578483B005A3145 /* AddDeviceViewController.swift */,
+				97D133BB25784825005A3145 /* GreenhouseViewController.swift */,
+				97D133B9257847B5005A3145 /* CultivationCycleViewController.swift */,
+				97D133B72578469D005A3145 /* LaunchViewController.swift */,
+				97D133B52578463C005A3145 /* MainWindowController.swift */,
+				975DF8F92584FC2000093800 /* ChangePlantViewController.swift */,
+				975DF8FB2584FC3200093800 /* AddParameterViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		975DF8BF257A42A200093800 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				97D133A9257841BA005A3145 /* Assets.xcassets */,
+				97D133AB257841BA005A3145 /* Main.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		975DF8C4257A44BC00093800 /* Devices */ = {
+			isa = PBXGroup;
+			children = (
+				975DF8D3257A470A00093800 /* Sensors */,
+				975DF8C0257A433F00093800 /* Heater.swift */,
+				975DF8C5257A45CE00093800 /* SourceOfLight.swift */,
+				975DF8C7257A45DF00093800 /* Conditioner.swift */,
+				975DF8C9257A462000093800 /* Humidifier.swift */,
+				975DF8CB257A46AD00093800 /* FertilizerDispenser.swift */,
+			);
+			path = Devices;
+			sourceTree = "<group>";
+		};
+		975DF8D3257A470A00093800 /* Sensors */ = {
+			isa = PBXGroup;
+			children = (
+				975DF8C2257A43D300093800 /* SensorProtocol.swift */,
+				975DF8D5257A51AC00093800 /* Active */,
+				975DF8D4257A51A600093800 /* Passive */,
+			);
+			path = Sensors;
+			sourceTree = "<group>";
+		};
+		975DF8D4257A51A600093800 /* Passive */ = {
+			isa = PBXGroup;
+			children = (
+				975DF8CD257A46B800093800 /* AcidityPassiveSensor.swift */,
+				975DF8CF257A46CE00093800 /* HumidityPassiveSensor.swift */,
+				975DF8D1257A46E100093800 /* TemperaturePassiveSensor.swift */,
+			);
+			path = Passive;
+			sourceTree = "<group>";
+		};
+		975DF8D5257A51AC00093800 /* Active */ = {
+			isa = PBXGroup;
+			children = (
+				975DF8D6257A51C300093800 /* AcidityActiveSensor.swift */,
+				975DF8D8257A51F200093800 /* HumidityActiveSensor.swift */,
+				975DF8DA257A520200093800 /* TemperatureActiveSensor.swift */,
+			);
+			path = Active;
+			sourceTree = "<group>";
+		};
+		97D13399257841B8005A3145 = {
+			isa = PBXGroup;
+			children = (
+				97D133A4257841B8005A3145 /* Greenhouse */,
+				97D133A3257841B8005A3145 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		97D133A3257841B8005A3145 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				97D133A2257841B8005A3145 /* Greenhouse.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		97D133A4257841B8005A3145 /* Greenhouse */ = {
+			isa = PBXGroup;
+			children = (
+				975DF8BF257A42A200093800 /* Resources */,
+				975DF8BE257A428300093800 /* Controllers */,
+				975DF8BD257A426000093800 /* Views */,
+				975DF8BC257A423D00093800 /* Models */,
+				97D133A5257841B8005A3145 /* AppDelegate.swift */,
+				97D133AE257841BA005A3145 /* Info.plist */,
+				97D133AF257841BA005A3145 /* Greenhouse.entitlements */,
+			);
+			path = Greenhouse;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		97D133A1257841B8005A3145 /* Greenhouse */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 97D133B2257841BA005A3145 /* Build configuration list for PBXNativeTarget "Greenhouse" */;
+			buildPhases = (
+				97D1339E257841B8005A3145 /* Sources */,
+				97D1339F257841B8005A3145 /* Frameworks */,
+				97D133A0257841B8005A3145 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Greenhouse;
+			productName = Greenhouse;
+			productReference = 97D133A2257841B8005A3145 /* Greenhouse.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		97D1339A257841B8005A3145 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "Марк Курлович";
+				TargetAttributes = {
+					97D133A1257841B8005A3145 = {
+						CreatedOnToolsVersion = 11.2;
+					};
+				};
+			};
+			buildConfigurationList = 97D1339D257841B8005A3145 /* Build configuration list for PBXProject "Greenhouse" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 97D13399257841B8005A3145;
+			productRefGroup = 97D133A3257841B8005A3145 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				97D133A1257841B8005A3145 /* Greenhouse */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		97D133A0257841B8005A3145 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97D133AA257841BA005A3145 /* Assets.xcassets in Resources */,
+				97D133AD257841BA005A3145 /* Main.storyboard in Resources */,
+				97D133C225786A9A005A3145 /* DeviceItem.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		97D1339E257841B8005A3145 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97D133BA257847B5005A3145 /* CultivationCycleViewController.swift in Sources */,
+				975DF8CA257A462000093800 /* Humidifier.swift in Sources */,
+				97D133A6257841B8005A3145 /* AppDelegate.swift in Sources */,
+				975DF8CE257A46B800093800 /* AcidityPassiveSensor.swift in Sources */,
+				975DF8DB257A520200093800 /* TemperatureActiveSensor.swift in Sources */,
+				97D133BC25784825005A3145 /* GreenhouseViewController.swift in Sources */,
+				975DF8C6257A45CE00093800 /* SourceOfLight.swift in Sources */,
+				975DF8DE257A762600093800 /* CultivatonCycleManager.swift in Sources */,
+				975DF8D0257A46CE00093800 /* HumidityPassiveSensor.swift in Sources */,
+				975DF8E0257A7B1500093800 /* Parameter.swift in Sources */,
+				97D133B62578463C005A3145 /* MainWindowController.swift in Sources */,
+				97D133BE2578483B005A3145 /* AddDeviceViewController.swift in Sources */,
+				975DF8D7257A51C300093800 /* AcidityActiveSensor.swift in Sources */,
+				975DF8CC257A46AD00093800 /* FertilizerDispenser.swift in Sources */,
+				975DF8C8257A45DF00093800 /* Conditioner.swift in Sources */,
+				975DF8D9257A51F200093800 /* HumidityActiveSensor.swift in Sources */,
+				975DF8FC2584FC3200093800 /* AddParameterViewController.swift in Sources */,
+				975DF8C3257A43D300093800 /* SensorProtocol.swift in Sources */,
+				97D133C125786A9A005A3145 /* DeviceItem.swift in Sources */,
+				975DF8C1257A433F00093800 /* Heater.swift in Sources */,
+				97D133B82578469D005A3145 /* LaunchViewController.swift in Sources */,
+				975DF8BB2579163400093800 /* Devices.swift in Sources */,
+				975DF8FA2584FC2000093800 /* ChangePlantViewController.swift in Sources */,
+				975DF8D2257A46E100093800 /* TemperaturePassiveSensor.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		97D133AB257841BA005A3145 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				97D133AC257841BA005A3145 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		97D133B0257841BA005A3145 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		97D133B1257841BA005A3145 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		97D133B3257841BA005A3145 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Greenhouse/Greenhouse.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Greenhouse/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = bsu.rfe.Greenhouse;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		97D133B4257841BA005A3145 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Greenhouse/Greenhouse.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Greenhouse/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = bsu.rfe.Greenhouse;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		97D1339D257841B8005A3145 /* Build configuration list for PBXProject "Greenhouse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97D133B0257841BA005A3145 /* Debug */,
+				97D133B1257841BA005A3145 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		97D133B2257841BA005A3145 /* Build configuration list for PBXNativeTarget "Greenhouse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97D133B3257841BA005A3145 /* Debug */,
+				97D133B4257841BA005A3145 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 97D1339A257841B8005A3145 /* Project object */;
+}
