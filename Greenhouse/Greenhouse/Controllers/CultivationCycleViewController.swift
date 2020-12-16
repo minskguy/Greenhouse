@@ -9,10 +9,14 @@
 import Cocoa
 
 class CultivationCycleViewController: NSViewController {
+    var plantManager: PlantManager = PlantManager()
     var parameters = [Parameter]()
     var plant: String = "Rose" {
         didSet {
             plantTextField?.stringValue = "Plant: \(plant)"
+            plantTextField?.sizeToFit()
+            parameters = plantManager.getParametersConfiguration(plantName: plant)
+            parametersTableView.reloadData()
         }
     }
     
@@ -23,7 +27,8 @@ class CultivationCycleViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureParametersTableView()
-        fillTableView()
+        parameters = plantManager.getParametersConfiguration(plantName: plant)
+        parametersTableView.reloadData()
     }
     @IBAction func backButtonTapped(_ sender: NSButton) {
         dismiss(self)
@@ -31,6 +36,7 @@ class CultivationCycleViewController: NSViewController {
     
     @IBAction func changePlantButtonTapped(_ sender: NSButton) {
         guard let VC = NSStoryboard.main?.instantiateController(withIdentifier: "changePlantID") as? ChangePlantViewController else { return }
+        VC.parentVC = self
         presentAsModalWindow(VC)
     }
     

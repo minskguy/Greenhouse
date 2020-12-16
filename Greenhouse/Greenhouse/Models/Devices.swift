@@ -10,11 +10,11 @@ import Cocoa
 
 enum Devices: String, CaseIterable {
     case none = ""
-    case heater = "heat"
-    case sourceOfLight = "sun"
-    case conditioner = "ac"
-    case humidifier = "water"
-    case fertilizerDispenser = "fertilizer"
+    case heater = "heater"
+    case sourceOfLight = "sourceOfLight"
+    case conditioner = "conditioner"
+    case humidifier = "humidifer"
+    case fertilizerDispenser = "fertilizerDispenser"
     case acidityPassiveSensor = "acidityPassiveSensor"
     case humidityPassiveSensor = "humidityPassiveSensor"
     case temperaturePassiveSensor = "temperaturePassiveSensor"

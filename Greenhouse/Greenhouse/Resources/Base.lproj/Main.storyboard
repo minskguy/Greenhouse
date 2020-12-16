@@ -91,7 +91,7 @@
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Xm-Mm-8Eh" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="854" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="leaves_background" id="DpL-Qw-5Rs"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="leavesBackground" id="DpL-Qw-5Rs"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Lt-tW-wi7">
                                 <rect key="frame" x="262" y="379" width="331" height="71"/>
@@ -482,9 +482,12 @@ DQ
                                         <string>Conditioner</string>
                                         <string>Humidifer</string>
                                         <string>Fertilizer Dispenser</string>
-                                        <string>Acidity Sensor</string>
-                                        <string>Humidity Sensor</string>
+                                        <string>Acidity Passive Sensor</string>
+                                        <string>Acidity Active Sensor</string>
+                                        <string>Humidity Passive Sensor</string>
+                                        <string>Humidity Active Sensor</string>
                                         <string>Temperature Passive Sensor</string>
+                                        <string>Temperature Active Sensor</string>
                                     </objectValues>
                                 </comboBoxCell>
                             </comboBox>
@@ -833,7 +836,7 @@ DQ
         <image name="backButton" width="1024" height="819"/>
         <image name="customizeCultivationPlan" width="4000" height="857"/>
         <image name="gear" width="996" height="1025"/>
-        <image name="leaves_background" width="1920" height="1080"/>
+        <image name="leavesBackground" width="1920" height="1080"/>
         <image name="rose" width="512" height="512"/>
         <image name="showTheGreenhouseButton" width="2547" height="857"/>
         <image name="startCultivationCycleButton" width="2700" height="875"/>

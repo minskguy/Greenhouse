@@ -46,10 +46,6 @@ class GreenhouseViewController: NSViewController {
     func configureDevicesCollectionView() {
         devicesCollectionView.delegate = self
         devicesCollectionView.dataSource = self
-//        devicesCollectionView.isSelectable = true
-//        devicesCollectionView.allowsEmptySelection = true
-//        devicesCollectionView.allowsMultipleSelection = true
-//        devicesCollectionView.enclosingScrollView?.borderType = .noBorder
         devicesCollectionView.register(NSNib(nibNamed: "DeviceItem", bundle: nil), forItemWithIdentifier: deviceItemIdentifier)
         configureGridLayout()
     }
@@ -125,15 +121,6 @@ extension GreenhouseViewController: NSCollectionViewDataSource {
         return item
     }
 
-}
-
-extension GreenhouseViewController: NSCollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
-//        guard let indexPath = indexPaths.first else { return }
-//        guard let url = devices[indexPath.section][indexPath.item].url else { return }
-//        filenameLabel.stringValue = url.lastPathComponent
-//    }
-    
 }
 
 

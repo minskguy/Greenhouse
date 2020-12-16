@@ -18,7 +18,6 @@ class AddDeviceViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
     }
     
     @IBAction func addDeviceButton(_ sender: NSButton) {
