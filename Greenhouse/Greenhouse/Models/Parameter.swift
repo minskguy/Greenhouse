@@ -15,6 +15,14 @@ final class Parameter {
     var deviation: Double = 0
     var startTime: Int = 0
     
+    init() {
+        parameterName = ""
+        value = 0
+        duration = 0
+        deviation = 0
+        startTime = 0
+    }
+    
     init(name: String, value: Int, duration: Int, deviation: Double,
          startTime: Int) {
         self.parameterName = name

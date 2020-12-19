@@ -44,7 +44,6 @@ class GreenhouseViewController: NSViewController {
     }
     
     func configureDevicesCollectionView() {
-        devicesCollectionView.delegate = self
         devicesCollectionView.dataSource = self
         devicesCollectionView.register(NSNib(nibNamed: "DeviceItem", bundle: nil), forItemWithIdentifier: deviceItemIdentifier)
         configureGridLayout()

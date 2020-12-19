@@ -297,7 +297,7 @@ DQ
         <!--AddParameterViewController-->
         <scene sceneID="1Ef-sS-85D">
             <objects>
-                <viewController title="AddParameterViewController" id="XcT-Rj-wMP" customClass="AddParameterViewController" customModule="Greenhouse" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="AddParameterViewController" storyboardIdentifier="addParameterID" id="XcT-Rj-wMP" customClass="AddParameterViewController" customModule="Greenhouse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="7na-v2-24z" userLabel="AddParameterView">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -417,9 +417,19 @@ DQ
 DQ
 </string>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="addParameterButtonTapped:" target="XcT-Rj-wMP" id="tFl-Wr-fko"/>
+                                </connections>
                             </button>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="deviationTextField" destination="bSQ-cs-nN5" id="iJ2-jh-PWc"/>
+                        <outlet property="durationTextField" destination="t5q-Cs-A3H" id="oPu-wS-58z"/>
+                        <outlet property="parameterNameComboBox" destination="xdT-D9-8mo" id="LCu-9Q-hDv"/>
+                        <outlet property="startTimeTextField" destination="nXH-YE-1yT" id="qFX-MB-bCi"/>
+                        <outlet property="valueTextField" destination="y1M-AT-Qbx" id="Fmb-Ut-8fH"/>
+                    </connections>
                 </viewController>
                 <customObject id="lqj-jo-PVz" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -807,6 +817,9 @@ DQ
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="addParameterButtonTapped" target="x95-et-nYe" id="Nvq-S8-nrM"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fwv-7T-1r5" userLabel="changePlantButton">
                                 <rect key="frame" x="686" y="409" width="121" height="32"/>

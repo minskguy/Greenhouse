@@ -24,7 +24,6 @@ class PlantManager {
         case "Sunflower":
             parameters.append(Parameter(name: "Humidity", value: 14, duration: 10, deviation: 20, startTime: 8))
             parameters.append(Parameter(name: "Humidity", value: 50, duration: 23, deviation: 20, startTime: 19))
-            
         case "Iris":
             parameters.append(Parameter(name: "Temperature", value: 21, duration: 46, deviation: 10, startTime: 78))
             parameters.append(Parameter(name: "Light", value: 1, duration: 28, deviation: 0, startTime: 10))

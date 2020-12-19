@@ -11,6 +11,12 @@ import Cocoa
 class CultivationCycleViewController: NSViewController {
     var plantManager: PlantManager = PlantManager()
     var parameters = [Parameter]()
+    var newParameter: Parameter = Parameter() {
+        didSet {
+            parameters.append(self.newParameter)
+            parametersTableView.reloadData()
+        }
+    }
     var plant: String = "Rose" {
         didSet {
             plantTextField?.stringValue = "Plant: \(plant)"
@@ -40,16 +46,15 @@ class CultivationCycleViewController: NSViewController {
         presentAsModalWindow(VC)
     }
     
+    @IBAction func addParameterButtonTapped(_ sender: NSButton) {
+        guard let VC = NSStoryboard.main?.instantiateController(withIdentifier: "addParameterID") as? AddParameterViewController else { return }
+        VC.parentVC = self
+        presentAsModalWindow(VC)
+    }
+    
     func configureParametersTableView() {
         parametersTableView.delegate = self
         parametersTableView.dataSource = self
-    }
-    
-    func fillTableView() {
-        parameters.append(Parameter(name: "Temperature", value: 35, duration: 46, deviation: 10, startTime: 78))
-        parameters.append(Parameter(name: "Humidity", value: 14, duration: 10, deviation: 20, startTime: 8))
-        parameters.append(Parameter(name: "Light", value: 1, duration: 28, deviation: 0, startTime: 10))
-        parametersTableView.reloadData()
     }
     
 }
