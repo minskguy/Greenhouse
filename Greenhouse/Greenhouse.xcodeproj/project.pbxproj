@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		973341732594EDD700A18AD2 /* Utilities+NSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973341722594EDD700A18AD2 /* Utilities+NSViewController.swift */; };
+		9733417525950F0900A18AD2 /* Plants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9733417425950F0900A18AD2 /* Plants.swift */; };
 		975DF8BB2579163400093800 /* Devices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF8BA2579163400093800 /* Devices.swift */; };
 		975DF8C1257A433F00093800 /* Heater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF8C0257A433F00093800 /* Heater.swift */; };
 		975DF8C3257A43D300093800 /* SensorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF8C2257A43D300093800 /* SensorProtocol.swift */; };
@@ -24,7 +26,6 @@
 		975DF8E0257A7B1500093800 /* Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF8DF257A7B1500093800 /* Parameter.swift */; };
 		975DF8FA2584FC2000093800 /* ChangePlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF8F92584FC2000093800 /* ChangePlantViewController.swift */; };
 		975DF8FC2584FC3200093800 /* AddParameterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF8FB2584FC3200093800 /* AddParameterViewController.swift */; };
-		978B86B32588F8E600C91745 /* PlantManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978B86B22588F8E600C91745 /* PlantManager.swift */; };
 		97D133A6257841B8005A3145 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D133A5257841B8005A3145 /* AppDelegate.swift */; };
 		97D133AA257841BA005A3145 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97D133A9257841BA005A3145 /* Assets.xcassets */; };
 		97D133AD257841BA005A3145 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97D133AB257841BA005A3145 /* Main.storyboard */; };
@@ -38,6 +39,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		973341722594EDD700A18AD2 /* Utilities+NSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Utilities+NSViewController.swift"; sourceTree = "<group>"; };
+		9733417425950F0900A18AD2 /* Plants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plants.swift; sourceTree = "<group>"; };
 		975DF8BA2579163400093800 /* Devices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Devices.swift; sourceTree = "<group>"; };
 		975DF8C0257A433F00093800 /* Heater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heater.swift; sourceTree = "<group>"; };
 		975DF8C2257A43D300093800 /* SensorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorProtocol.swift; sourceTree = "<group>"; };
@@ -55,7 +58,6 @@
 		975DF8DF257A7B1500093800 /* Parameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameter.swift; sourceTree = "<group>"; };
 		975DF8F92584FC2000093800 /* ChangePlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePlantViewController.swift; sourceTree = "<group>"; };
 		975DF8FB2584FC3200093800 /* AddParameterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddParameterViewController.swift; sourceTree = "<group>"; };
-		978B86B22588F8E600C91745 /* PlantManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantManager.swift; sourceTree = "<group>"; };
 		97D133A2257841B8005A3145 /* Greenhouse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Greenhouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97D133A5257841B8005A3145 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97D133A9257841BA005A3145 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -82,6 +84,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		973341712594ED2A00A18AD2 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				973341722594EDD700A18AD2 /* Utilities+NSViewController.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		975DF8BC257A423D00093800 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,9 +99,8 @@
 				975DF8BA2579163400093800 /* Devices.swift */,
 				97D133BF25786A99005A3145 /* DeviceItem.swift */,
 				97D133C025786A9A005A3145 /* DeviceItem.xib */,
-				975DF8DD257A762600093800 /* CultivatonCycleManager.swift */,
 				975DF8DF257A7B1500093800 /* Parameter.swift */,
-				978B86B22588F8E600C91745 /* PlantManager.swift */,
+				9733417425950F0900A18AD2 /* Plants.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -188,6 +197,8 @@
 		97D133A4257841B8005A3145 /* Greenhouse */ = {
 			isa = PBXGroup;
 			children = (
+				97FAC1D925951F1600EA9507 /* Manager */,
+				973341712594ED2A00A18AD2 /* Utilities */,
 				975DF8BF257A42A200093800 /* Resources */,
 				975DF8BE257A428300093800 /* Controllers */,
 				975DF8BD257A426000093800 /* Views */,
@@ -197,6 +208,14 @@
 				97D133AF257841BA005A3145 /* Greenhouse.entitlements */,
 			);
 			path = Greenhouse;
+			sourceTree = "<group>";
+		};
+		97FAC1D925951F1600EA9507 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				975DF8DD257A762600093800 /* CultivatonCycleManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,13 +291,13 @@
 			files = (
 				97D133BA257847B5005A3145 /* CultivationCycleViewController.swift in Sources */,
 				975DF8CA257A462000093800 /* Humidifier.swift in Sources */,
-				978B86B32588F8E600C91745 /* PlantManager.swift in Sources */,
 				97D133A6257841B8005A3145 /* AppDelegate.swift in Sources */,
 				975DF8CE257A46B800093800 /* AcidityPassiveSensor.swift in Sources */,
 				975DF8DB257A520200093800 /* TemperatureActiveSensor.swift in Sources */,
 				97D133BC25784825005A3145 /* GreenhouseViewController.swift in Sources */,
 				975DF8C6257A45CE00093800 /* SourceOfLight.swift in Sources */,
 				975DF8DE257A762600093800 /* CultivatonCycleManager.swift in Sources */,
+				973341732594EDD700A18AD2 /* Utilities+NSViewController.swift in Sources */,
 				975DF8D0257A46CE00093800 /* HumidityPassiveSensor.swift in Sources */,
 				975DF8E0257A7B1500093800 /* Parameter.swift in Sources */,
 				97D133B62578463C005A3145 /* MainWindowController.swift in Sources */,
@@ -291,6 +310,7 @@
 				975DF8C3257A43D300093800 /* SensorProtocol.swift in Sources */,
 				97D133C125786A9A005A3145 /* DeviceItem.swift in Sources */,
 				975DF8C1257A433F00093800 /* Heater.swift in Sources */,
+				9733417525950F0900A18AD2 /* Plants.swift in Sources */,
 				97D133B82578469D005A3145 /* LaunchViewController.swift in Sources */,
 				975DF8BB2579163400093800 /* Devices.swift in Sources */,
 				975DF8FA2584FC2000093800 /* ChangePlantViewController.swift in Sources */,

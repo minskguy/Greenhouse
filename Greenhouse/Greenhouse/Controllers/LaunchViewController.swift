@@ -10,6 +10,8 @@ import Cocoa
 
 class LaunchViewController: NSViewController {
 
+    @IBOutlet weak var cultivationCycleButton: NSButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,7 +24,13 @@ class LaunchViewController: NSViewController {
         }
     }
     
-    @IBAction func startCultivationCycleButtonTapped(_ sender: NSButton) {
-        CultivationCycleManager.shared.isInProcess = true
+    @IBAction func cultivationCycleButtonTapped(_ sender: NSButton) {
+        if CultivationCycleManager.shared.isInProcess {
+            CultivationCycleManager.shared.isInProcess = false
+            cultivationCycleButton.image = NSImage(named: "startCultivationCycleButton")
+        } else {
+            CultivationCycleManager.shared.isInProcess = true
+            cultivationCycleButton.image = NSImage(named: "stopCultivationCycleButton")
+        }
     }
 }

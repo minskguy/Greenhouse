@@ -25,11 +25,30 @@ class GreenhouseViewController: NSViewController {
     
     let deviceItemIdentifier: NSUserInterfaceItemIdentifier = NSUserInterfaceItemIdentifier(rawValue: "deviceItemIdentifier")
     @IBOutlet weak var devicesCollectionView: NSCollectionView!
+    @IBOutlet weak var cultivationTextField: NSTextField!
+    @IBOutlet weak var plantImageView: NSImageView!
+    @IBOutlet weak var headerColorWell: NSColorWell!
+    
+    override init(nibName nibNameOrNil: NSNib.Name?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        NotificationCenter.default.addObserver(self, selector: #selector(timeDidChange(notification:)), name: NSNotification.Name(rawValue: "timeDidChange"), object: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        cultivationTextField.stringValue = "\(CultivationCycleManager.shared.currentPlant.rawValue), cycle start - 13.11.2020, lasted: \(CultivationCycleManager.shared.cultivationCycleCurrentTime) hours"
+        plantImageView.image = NSImage(named: CultivationCycleManager.shared.currentPlant.rawValue.lowercased())
         configureDevicesCollectionView()
-        fillModel()
+        devices = CultivationCycleManager.shared.currentDeviceConfiguration
+        changeBackgroundColor()
         devicesCollectionView.reloadData()
     }
     
@@ -58,26 +77,6 @@ class GreenhouseViewController: NSViewController {
         gridLayout.margins = NSEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         devicesCollectionView.collectionViewLayout = gridLayout
     }
-    
-    func fillModel() {
-        for _ in 0...3 {
-            var devicesRow = [Devices]()
-            for _ in 0...9 {
-                devicesRow.append(.none)
-            }
-            devices.append(devicesRow)
-        }
-        defaultGreenhouse()
-    }
-    
-    func defaultGreenhouse() {
-        devices[0][0] = .acidityActiveSensor
-        devices[3][0] = .acidityPassiveSensor
-        devices[0][9] = .temperaturePassiveSensor
-        devices[3][9] = .temperatureActiveSensor
-        devices[1][2] = .humidityActiveSensor
-        devices[0][4] = .humidityPassiveSensor
-    }
 }
 
 extension GreenhouseViewController: NSCollectionViewDataSource {
@@ -90,7 +89,8 @@ extension GreenhouseViewController: NSCollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-         guard let item = collectionView.makeItem(withIdentifier: deviceItemIdentifier, for: indexPath) as? DeviceItem else { return NSCollectionViewItem() }
+        guard let item = collectionView.makeItem(withIdentifier: deviceItemIdentifier, for: indexPath) as? DeviceItem else { return NSCollectionViewItem() }
+        item.parameterLabel?.stringValue = ""
         let device = devices[indexPath.item / 10][indexPath.item % 10]
         switch device {
         case .acidityActiveSensor:
@@ -106,20 +106,33 @@ extension GreenhouseViewController: NSCollectionViewDataSource {
         case .humidityPassiveSensor:
             item.parameter = 55
         default:
+            item.parameter = nil
             break
         }
-        if device == .acidityActiveSensor
-            || device == .acidityPassiveSensor
-            || device == .humidityActiveSensor
-            || device == .humidityPassiveSensor
-            || device == .temperatureActiveSensor
-            || device == .temperaturePassiveSensor {
-            item.addLabel()
-        }
+        item.addLabel()
         item.setImage(image: device.getImage())
         return item
     }
-
+    
+    func changeBackgroundColor() {
+        switch CultivationCycleManager.shared.currentPlant {
+        case .hibiscus:
+            headerColorWell.color = NSColor(red: 158/255, green: 122/255, blue: 18/255, alpha: 1)
+        case .clivia:
+            headerColorWell.color = NSColor(red: 179/255, green: 143/255, blue: 15/255, alpha: 1)
+        case .dahlia:
+            headerColorWell.color = NSColor(red: 179/255, green: 69/255, blue: 70/255, alpha: 1)
+        case .jade:
+            headerColorWell.color = NSColor(red: 159/255, green: 114/255, blue: 161/255, alpha: 1)
+        case .plumeria:
+            headerColorWell.color = NSColor(red: 157/255, green: 150/255, blue: 182/255, alpha: 1)
+        }
+    }
+    
+    @objc func timeDidChange(notification: NSNotification) {
+        guard let time = notification.object as? Int else { return }
+        cultivationTextField.stringValue = "\(CultivationCycleManager.shared.currentPlant.rawValue), cycle start - 13.11.2020, lasted: \(time) hours"
+    }
 }
 
 

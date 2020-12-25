@@ -21,13 +21,16 @@ class DeviceItem: NSCollectionViewItem {
     
     func addLabel() {
         let label = NSTextField()
-        label.stringValue = String(parameter!)
         label.font = NSFont.systemFont(ofSize: 10)
         label.isEditable = false
-        label.sizeToFit()
+        label.isBordered = false
         label.frame = NSRect(x: view.frame.width / 2 - label.frame.width / 2, y: view.frame.height / 2 - label.frame.height / 2, width: label.frame.width, height: label.frame.height)
         parameterLabel = label
         view.addSubview(label)
+        
+        guard let parameter = self.parameter else { return }
+        parameterLabel?.stringValue = String(parameter)
+        label.sizeToFit()
     }
     
     override func viewDidLoad() {
@@ -43,6 +46,7 @@ class DeviceItem: NSCollectionViewItem {
     override func prepareForReuse() {
         super.prepareForReuse()
         imageView?.image = nil
+        parameter = nil
         parameterLabel?.stringValue = ""
         parameterLabel?.isHidden = true
     }

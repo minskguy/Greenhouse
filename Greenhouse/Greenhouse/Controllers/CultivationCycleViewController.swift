@@ -9,19 +9,20 @@
 import Cocoa
 
 class CultivationCycleViewController: NSViewController {
-    var plantManager: PlantManager = PlantManager()
     var parameters = [Parameter]()
     var newParameter: Parameter = Parameter() {
         didSet {
             parameters.append(self.newParameter)
+            CultivationCycleManager.shared.currentParameterConfiguration.append(self.newParameter)
             parametersTableView.reloadData()
         }
     }
-    var plant: String = "Rose" {
+    var plant: Plants = CultivationCycleManager.shared.currentPlant {
         didSet {
-            plantTextField?.stringValue = "Plant: \(plant)"
+            parameters = CultivationCycleManager.shared.currentParameterConfiguration
+            plantTextField?.stringValue = "Plant: \(self.plant.rawValue)"
             plantTextField?.sizeToFit()
-            parameters = plantManager.getParametersConfiguration(plantName: plant)
+            plantImageView.image = NSImage(named: self.plant.rawValue.lowercased())
             parametersTableView.reloadData()
         }
     }
@@ -29,11 +30,15 @@ class CultivationCycleViewController: NSViewController {
     @IBOutlet weak var parametersTableView: NSTableView!
     @IBOutlet weak var plantTextField: NSTextField!
     @IBOutlet weak var plantImageView: NSImageView!
+    @IBOutlet weak var cultivationCycleDurationTextField: NSTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureParametersTableView()
-        parameters = plantManager.getParametersConfiguration(plantName: plant)
+        parameters = CultivationCycleManager.shared.currentParameterConfiguration
+        plantTextField?.stringValue = "Plant: \(self.plant.rawValue)"
+        plantTextField?.sizeToFit()
+        plantImageView.image = NSImage(named: self.plant.rawValue.lowercased())
         parametersTableView.reloadData()
     }
     @IBAction func backButtonTapped(_ sender: NSButton) {
@@ -52,6 +57,15 @@ class CultivationCycleViewController: NSViewController {
         presentAsModalWindow(VC)
     }
     
+    @IBAction func customModeButtonTapped(_ sender: NSButton) {
+        if cultivationCycleDurationTextField.isEnabled {
+            cultivationCycleDurationTextField.isEnabled = false
+        } else {
+            cultivationCycleDurationTextField.isEnabled = true
+        }
+    }
+    
+    
     func configureParametersTableView() {
         parametersTableView.delegate = self
         parametersTableView.dataSource = self
@@ -67,7 +81,7 @@ extension CultivationCycleViewController: NSTableViewDataSource {
 
 extension CultivationCycleViewController: NSTableViewDelegate {
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-    
+        
         if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "ParameterCellID"), owner: nil) as? NSTableCellView {
             switch tableColumn {
             case tableView.tableColumns[0]:

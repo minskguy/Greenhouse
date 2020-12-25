@@ -121,7 +121,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="startCultivationCycleButtonTapped:" target="XfG-lQ-9wD" id="1Ki-8M-AQh"/>
+                                    <action selector="cultivationCycleButtonTapped:" target="XfG-lQ-9wD" id="1Ki-8M-AQh"/>
                                 </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UlS-iU-YRB" userLabel="showTheGreenhouse">
@@ -137,6 +137,9 @@
                             </button>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="cultivationCycleButton" destination="uRk-aC-WuH" id="CxO-mw-oTf"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -151,19 +154,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <colorWell fixedFrame="YES" bordered="NO" continuous="NO" enabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IW5-yr-sQF" userLabel="background">
-                                <rect key="frame" x="120" y="371" width="632" height="89"/>
+                                <rect key="frame" x="104" y="371" width="650" height="89"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <color key="color" red="0.39864692379375399" green="0.043283067306650755" blue="0.010028234134415247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="color" red="0.61673478913736912" green="0.58931655910085912" blue="0.71320364598885244" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </colorWell>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VMh-qB-xoZ" userLabel="description">
-                                <rect key="frame" x="203" y="398" width="580" height="25"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Roses, cycle start - 13.11.2020, lasted: 1 day, 13 hours" id="xpT-s9-IIV">
-                                    <font key="font" size="19" name="HiraKakuPro-W3"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4AJ-tA-PzC" userLabel="addDeviceButton">
                                 <rect key="frame" x="772" y="391" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -187,9 +181,9 @@
                                 </connections>
                             </button>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PIc-aM-V4S" userLabel="typeOfFlower">
-                                <rect key="frame" x="132" y="383" width="65" height="65"/>
+                                <rect key="frame" x="123" y="383" width="65" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="rose" id="gli-vZ-Xq4"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="plumeria" id="gli-vZ-Xq4"/>
                             </imageView>
                             <scrollView wantsLayer="YES" fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nn5-Db-3p8">
                                 <rect key="frame" x="32" y="28" width="790" height="310"/>
@@ -217,10 +211,22 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VMh-qB-xoZ" userLabel="description">
+                                <rect key="frame" x="201" y="398" width="580" height="25"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Hibiscus, cycle start - 13.11.2020, lasted: 1 day, 13 hours" id="xpT-s9-IIV">
+                                    <font key="font" size="19" name="HiraKakuPro-W3"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="cultivationTextField" destination="VMh-qB-xoZ" id="zi5-TZ-SrP"/>
                         <outlet property="devicesCollectionView" destination="aPf-17-vPb" id="VdY-zB-7xu"/>
+                        <outlet property="headerColorWell" destination="IW5-yr-sQF" id="gBo-4Z-SEl"/>
+                        <outlet property="plantImageView" destination="PIc-aM-V4S" id="VEE-wg-n4a"/>
                     </connections>
                 </viewController>
                 <customObject id="NYI-sD-G4g" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -261,17 +267,16 @@ DQ
                             <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="26Y-iL-vma">
                                 <rect key="frame" x="20" y="83" width="123" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="6" id="eiT-sR-aGL">
+                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="eiT-sR-aGL">
                                     <font key="font" metaFont="titleBar"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <objectValues>
-                                        <string>Rose</string>
-                                        <string>Chamomile</string>
-                                        <string>Sunflower</string>
-                                        <string>Iris</string>
-                                        <string>Tulips</string>
-                                        <string>Liles</string>
+                                        <string>Hibiscus</string>
+                                        <string>Clivia</string>
+                                        <string>Dahlia</string>
+                                        <string>Jade</string>
+                                        <string>Plumeria</string>
                                     </objectValues>
                                 </comboBoxCell>
                             </comboBox>
@@ -323,7 +328,7 @@ DQ
                             <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xdT-D9-8mo" userLabel="parametersComboBox">
                                 <rect key="frame" x="20" y="198" width="141" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="jj8-Iz-CpZ">
+                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="jj8-Iz-CpZ">
                                     <font key="font" metaFont="titleBar"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -482,7 +487,7 @@ DQ
                             <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GTh-zp-igs" userLabel="deviceTypeComboBox">
                                 <rect key="frame" x="20" y="157" width="201" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="nO2-RJ-p8w">
+                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="nO2-RJ-p8w">
                                     <font key="font" metaFont="titleBar"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -573,7 +578,7 @@ DQ
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eFy-ON-UeZ" userLabel="plantImageView">
                                 <rect key="frame" x="132" y="370" width="83" height="83"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="rose" id="9L5-fp-ajc"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="hibiscus" id="9L5-fp-ajc"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Fa-yu-3TX" userLabel="durationLabel">
                                 <rect key="frame" x="234" y="387" width="240" height="19"/>
@@ -584,10 +589,12 @@ DQ
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jer-du-Ul4" userLabel="plantLabel">
-                                <rect key="frame" x="234" y="428" width="92" height="19"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Plant:  Rose" id="r2F-yD-PjV">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jer-du-Ul4" userLabel="plantLabel">
+                                <rect key="frame" x="234" y="428" width="179" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="179" id="KRK-kB-L1L"/>
+                                </constraints>
+                                <textFieldCell key="cell" title="Plant: Hibiscus" id="r2F-yD-PjV">
                                     <font key="font" size="15" name="HiraKakuPro-W3"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -596,7 +603,7 @@ DQ
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TkS-fW-bfm" userLabel="durationTextField">
                                 <rect key="frame" x="491" y="386" width="96" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="100" drawsBackground="YES" id="lA4-hr-75r">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="100" drawsBackground="YES" id="lA4-hr-75r">
                                     <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="SmX-k8-2Ih"/>
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -811,18 +818,18 @@ DQ
                                 </tableHeaderView>
                             </scrollView>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y5u-Fa-ZDU" userLabel="addParameterButton">
-                                <rect key="frame" x="686" y="376" width="121" height="32"/>
+                                <rect key="frame" x="686" y="388" width="121" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Add parameter" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="uGf-eO-iJe">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="addParameterButtonTapped" target="x95-et-nYe" id="Nvq-S8-nrM"/>
+                                    <action selector="addParameterButtonTapped:" target="x95-et-nYe" id="Rrb-Lm-TKi"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fwv-7T-1r5" userLabel="changePlantButton">
-                                <rect key="frame" x="686" y="409" width="121" height="32"/>
+                                <rect key="frame" x="686" y="421" width="121" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Change plant" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5bu-fI-QKe">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -832,9 +839,21 @@ DQ
                                     <action selector="changePlantButtonTapped:" target="x95-et-nYe" id="wUD-Lx-ubA"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GHf-UV-ZJP">
+                                <rect key="frame" x="712" y="359" width="69" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Custom" bezelStyle="regularSquare" imagePosition="left" inset="2" id="HIk-lz-mpC">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="customModeButtonTapped:" target="x95-et-nYe" id="Dqo-xc-kxk"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="cultivationCycleDurationTextField" destination="TkS-fW-bfm" id="IeW-jM-pjn"/>
                         <outlet property="parametersTableView" destination="e82-ag-Qb9" id="xAD-mj-uCF"/>
                         <outlet property="plantImageView" destination="eFy-ON-UeZ" id="XFW-Jy-V11"/>
                         <outlet property="plantTextField" destination="jer-du-Ul4" id="O3g-c3-HTc"/>
@@ -849,8 +868,9 @@ DQ
         <image name="backButton" width="1024" height="819"/>
         <image name="customizeCultivationPlan" width="4000" height="857"/>
         <image name="gear" width="996" height="1025"/>
+        <image name="hibiscus" width="512" height="512"/>
         <image name="leavesBackground" width="1920" height="1080"/>
-        <image name="rose" width="512" height="512"/>
+        <image name="plumeria" width="512" height="512"/>
         <image name="showTheGreenhouseButton" width="2547" height="857"/>
         <image name="startCultivationCycleButton" width="2700" height="875"/>
     </resources>

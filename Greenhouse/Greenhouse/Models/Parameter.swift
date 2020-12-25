@@ -8,12 +8,13 @@
 
 import Foundation
 
-final class Parameter {
-    var parameterName: String = ""
-    var value: Int = 0
-    var duration: Int = 0
-    var deviation: Double = 0
-    var startTime: Int = 0
+struct Parameter {
+    var parameterName: String
+    var value: Int
+    var duration: Int
+    var deviation: Double
+    var startTime: Int
+    var isActive: Bool
     
     init() {
         parameterName = ""
@@ -21,6 +22,7 @@ final class Parameter {
         duration = 0
         deviation = 0
         startTime = 0
+        isActive = false
     }
     
     init(name: String, value: Int, duration: Int, deviation: Double,
@@ -30,5 +32,6 @@ final class Parameter {
         self.duration = duration
         self.deviation = deviation
         self.startTime = startTime
+        self.isActive = false
     }
 }
