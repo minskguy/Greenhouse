@@ -122,6 +122,7 @@ class GreenhouseViewController: NSViewController {
     @objc func timeDidChange(notification: NSNotification) {
         guard let time = notification.object as? Int else { return }
         cultivationTextField.stringValue = "\(CultivationCycleManager.shared.currentPlant.rawValue), cycle start - \(CultivationCycleManager.shared.cultivationCycleCurrentDate), lasted: \(time) hours"
+        devices = CultivationCycleManager.shared.currentDeviceConfiguration
         devicesCollectionView.reloadItems(at: Set(CultivationCycleManager.shared.modifiedDevices))
     }
 }

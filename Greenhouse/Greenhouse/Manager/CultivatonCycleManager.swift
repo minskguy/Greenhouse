@@ -67,11 +67,11 @@ final class CultivationCycleManager: NSObject {
         
         switch currentPlant {
         case .hibiscus:
-            cultivationCycleDuration = 5
-            currentParameterConfiguration.append(Parameter(name: "Temperature", value: 32, duration: 100, deviation: 5, startTime: 0))
+            cultivationCycleDuration = 21
+            currentParameterConfiguration.append(Parameter(name: "Temperature", value: 32, duration: 50, deviation: 5, startTime: 0))
             currentParameterConfiguration.append(Parameter(name: "Light", value: 1, duration: 50, deviation: 0, startTime: 5))
-            currentParameterConfiguration.append(Parameter(name: "Humidity", value: 25, duration: 50, deviation: 7, startTime: 30))
-            currentParameterConfiguration.append(Parameter(name: "Acidity", value: 50, duration: 150, deviation: 10, startTime: 50))
+            currentParameterConfiguration.append(Parameter(name: "Humidity", value: 22, duration: 50, deviation: 7, startTime: 50))
+            currentParameterConfiguration.append(Parameter(name: "Acidity", value: 58, duration: 100, deviation: 8, startTime: 40))
                         
             
             currentDeviceConfiguration[1][3] = TemperatureActiveSensor()
@@ -80,6 +80,10 @@ final class CultivationCycleManager: NSObject {
             currentDeviceConfiguration[2][6] = HumidityActiveSensor()
             currentDeviceConfiguration[1][0] = AcidityPassiveSensor()
             currentDeviceConfiguration[1][9] = AcidityActiveSensor()
+            currentDeviceConfiguration[0][2] = SourceOfLight()
+            currentDeviceConfiguration[0][7] = SourceOfLight()
+            currentDeviceConfiguration[3][2] = SourceOfLight()
+            currentDeviceConfiguration[3][7] = SourceOfLight()
             currentDeviceConfiguration[2][0] = Heater()
             currentDeviceConfiguration[2][9] = Heater()
             currentDeviceConfiguration[0][1] = Conditioner()
@@ -91,33 +95,106 @@ final class CultivationCycleManager: NSObject {
         case .clivia:
             cultivationCycleDuration = 50
             
-            currentParameterConfiguration.append(Parameter(name: "Temperature", value: 35, duration: 2, deviation: 40, startTime: 178))
-            currentParameterConfiguration.append(Parameter(name: "Humidity", value: 14, duration: 10, deviation: 20, startTime: 8))
-            currentParameterConfiguration.append(Parameter(name: "Temperature", value: 35, duration: 76, deviation: 40, startTime: 180))
+            currentParameterConfiguration.append(Parameter(name: "Acidity", value: 58, duration: 200, deviation: 2, startTime: 0))
+            currentParameterConfiguration.append(Parameter(name: "Humidity", value: 78, duration: 30, deviation: 8, startTime: 20))
+            currentParameterConfiguration.append(Parameter(name: "Temperature", value: 43, duration: 20, deviation: 8, startTime: 50))
+            currentParameterConfiguration.append(Parameter(name: "Light", value: 1, duration: 100, deviation: 0, startTime: 40))
             
-            currentDeviceConfiguration[1][0] = AcidityActiveSensor()
-            currentDeviceConfiguration[3][4] = AcidityPassiveSensor()
-            currentDeviceConfiguration[3][3] = TemperaturePassiveSensor()
-            currentDeviceConfiguration[0][0] = TemperatureActiveSensor()
-            currentDeviceConfiguration[2][8] = HumidityActiveSensor()
-            currentDeviceConfiguration[3][0] = HumidityPassiveSensor()
+            currentDeviceConfiguration[1][3] = SourceOfLight()
+            currentDeviceConfiguration[1][6] = SourceOfLight()
+            currentDeviceConfiguration[2][3] = SourceOfLight()
+            currentDeviceConfiguration[2][6] = SourceOfLight()
+            currentDeviceConfiguration[1][0] = AcidityPassiveSensor()
+            currentDeviceConfiguration[1][9] = AcidityActiveSensor()
+            currentDeviceConfiguration[0][2] = HumidityPassiveSensor()
+            currentDeviceConfiguration[0][7] = HumidityActiveSensor()
+            currentDeviceConfiguration[3][2] = TemperatureActiveSensor()
+            currentDeviceConfiguration[3][7] = TemperaturePassiveSensor()
+            currentDeviceConfiguration[2][0] = FertilizerDispenser()
+            currentDeviceConfiguration[2][9] = FertilizerDispenser()
+            currentDeviceConfiguration[2][4] = Conditioner()
+            currentDeviceConfiguration[2][5] = Conditioner()
+            currentDeviceConfiguration[3][1] = Humidifier()
+            currentDeviceConfiguration[3][8] = Humidifier()
+            currentDeviceConfiguration[1][1] = Heater()
+            currentDeviceConfiguration[1][8] = Heater()
         case .dahlia:
             cultivationCycleDuration = 86
             
-            currentParameterConfiguration.append(Parameter(name: "Humidity", value: 14, duration: 10, deviation: 20, startTime: 8))
-            currentParameterConfiguration.append(Parameter(name: "Humidity", value: 50, duration: 23, deviation: 20, startTime: 19))
+            currentParameterConfiguration.append(Parameter(name: "Light", value: 1, duration: 100, deviation: 0, startTime: 0))
+            currentParameterConfiguration.append(Parameter(name: "Humidity", value: 84, duration: 5, deviation: 8, startTime: 0))
+            currentParameterConfiguration.append(Parameter(name: "Temperature", value: 10, duration: 5, deviation: 5, startTime: 5))
+            currentParameterConfiguration.append(Parameter(name: "Humidity", value: 84, duration: 20, deviation: 8, startTime: 10))
+            
+            currentDeviceConfiguration[0][0] = SourceOfLight()
+            currentDeviceConfiguration[3][0] = SourceOfLight()
+            currentDeviceConfiguration[0][9] = SourceOfLight()
+            currentDeviceConfiguration[3][9] = SourceOfLight()
+            currentDeviceConfiguration[2][1] = AcidityPassiveSensor()
+            currentDeviceConfiguration[2][8] = AcidityPassiveSensor()
+            currentDeviceConfiguration[0][4] = TemperatureActiveSensor()
+            currentDeviceConfiguration[0][2] = Conditioner()
+            currentDeviceConfiguration[0][7] = Conditioner()
+            currentDeviceConfiguration[3][2] = TemperatureActiveSensor()
+            currentDeviceConfiguration[3][7] = TemperaturePassiveSensor()
+            currentDeviceConfiguration[2][0] = FertilizerDispenser()
+            currentDeviceConfiguration[2][9] = FertilizerDispenser()
+            currentDeviceConfiguration[2][3] = HumidityActiveSensor()
+            currentDeviceConfiguration[2][6] = HumidityActiveSensor()
+            currentDeviceConfiguration[0][1] = Humidifier()
+            currentDeviceConfiguration[0][8] = Humidifier()
+            currentDeviceConfiguration[1][1] = Heater()
+            currentDeviceConfiguration[1][8] = Heater()
         case .jade:
             cultivationCycleDuration = 34
             
             currentParameterConfiguration.append(Parameter(name: "Temperature", value: 21, duration: 46, deviation: 10, startTime: 78))
             currentParameterConfiguration.append(Parameter(name: "Light", value: 1, duration: 28, deviation: 0, startTime: 10))
             currentParameterConfiguration.append(Parameter(name: "Humidity", value: 6, duration: 10, deviation: 20, startTime: 8))
+            
+            currentDeviceConfiguration[1][3] = SourceOfLight()
+            currentDeviceConfiguration[1][6] = SourceOfLight()
+            currentDeviceConfiguration[2][3] = FertilizerDispenser()
+            currentDeviceConfiguration[2][6] = FertilizerDispenser()
+            currentDeviceConfiguration[3][3] = AcidityPassiveSensor()
+            currentDeviceConfiguration[3][6] = AcidityActiveSensor()
+            currentDeviceConfiguration[0][2] = HumidityPassiveSensor()
+            currentDeviceConfiguration[0][7] = HumidityActiveSensor()
+            currentDeviceConfiguration[3][2] = Heater()
+            currentDeviceConfiguration[3][7] = Heater()
+            currentDeviceConfiguration[2][0] = SourceOfLight()
+            currentDeviceConfiguration[2][9] = SourceOfLight()
+            currentDeviceConfiguration[2][4] = Conditioner()
+            currentDeviceConfiguration[2][5] = Conditioner()
+            currentDeviceConfiguration[3][1] = Humidifier()
+            currentDeviceConfiguration[3][8] = Humidifier()
+            currentDeviceConfiguration[1][1] = TemperatureActiveSensor()
+            currentDeviceConfiguration[1][8] = TemperaturePassiveSensor()
         case .plumeria:
             cultivationCycleDuration = 180
             
             currentParameterConfiguration.append(Parameter(name: "Temperature", value: 35, duration: 46, deviation: 10, startTime: 78))
             currentParameterConfiguration.append(Parameter(name: "Humidity", value: 14, duration: 10, deviation: 20, startTime: 8))
             currentParameterConfiguration.append(Parameter(name: "Light", value: 1, duration: 28, deviation: 0, startTime: 10))
+            
+            currentDeviceConfiguration[1][3] = SourceOfLight()
+            currentDeviceConfiguration[1][6] = SourceOfLight()
+            currentDeviceConfiguration[2][3] = SourceOfLight()
+            currentDeviceConfiguration[2][6] = SourceOfLight()
+            currentDeviceConfiguration[1][0] = AcidityPassiveSensor()
+            currentDeviceConfiguration[1][9] = AcidityActiveSensor()
+            currentDeviceConfiguration[0][2] = HumidityPassiveSensor()
+            currentDeviceConfiguration[0][7] = HumidityActiveSensor()
+            currentDeviceConfiguration[3][2] = TemperatureActiveSensor()
+            currentDeviceConfiguration[3][7] = TemperaturePassiveSensor()
+            currentDeviceConfiguration[2][0] = FertilizerDispenser()
+            currentDeviceConfiguration[2][9] = FertilizerDispenser()
+            currentDeviceConfiguration[2][4] = Conditioner()
+            currentDeviceConfiguration[2][5] = Conditioner()
+            currentDeviceConfiguration[3][1] = Humidifier()
+            currentDeviceConfiguration[3][8] = Humidifier()
+            currentDeviceConfiguration[1][1] = Heater()
+            currentDeviceConfiguration[1][8] = Heater()
         }
     }
     
@@ -125,7 +202,7 @@ final class CultivationCycleManager: NSObject {
         for i in 0...3 {
             for j in 0...9 {
                 switch currentDeviceConfiguration[i][j].deviceType {
-                case .heater, .humidifier, .fertilizerDispenser, .conditioner:
+                case .heater, .humidifier, .fertilizerDispenser, .conditioner, .sourceOfLight:
                     currentDeviceConfiguration[i][j].isActive = false
                     currentDeviceConfiguration[i][j].observedSensors = [:]
                 case .acidityActiveSensor, .acidityPassiveSensor:
@@ -194,32 +271,38 @@ final class CultivationCycleManager: NSObject {
     func activeSensorsRangeCheck(parameter: Parameter) {
         switch parameter.parameterName {
         case "Temperature":
-            for i in 0...3 {
-                for j in 0...9 {
-                    var device = currentDeviceConfiguration[i][j]
-                    if device.deviceType == .temperatureActiveSensor {
-                        device.isOutOfRange = !(device.currentValue! >= (parameter.value - parameter.deviation)
-                            && device.currentValue! <= (parameter.value + parameter.deviation))
+            if parameter.isActive {
+                for i in 0...3 {
+                    for j in 0...9 {
+                        var device = currentDeviceConfiguration[i][j]
+                        if currentDeviceConfiguration[i][j].deviceType == .temperatureActiveSensor {
+                            device.isOutOfRange = !(device.currentValue! >= parameter.value - parameter.deviation
+                            && device.currentValue! <= parameter.value + parameter.deviation)
+                        }
                     }
                 }
             }
         case "Humidity":
-            for i in 0...3 {
-                for j in 0...9 {
-                    var device = currentDeviceConfiguration[i][j]
-                    if currentDeviceConfiguration[i][j].deviceType == .humidityActiveSensor {
-                        device.isOutOfRange = device.currentValue! >= parameter.value - parameter.deviation
-                        && device.currentValue! <= parameter.value + parameter.deviation
+            if parameter.isActive {
+                for i in 0...3 {
+                    for j in 0...9 {
+                        var device = currentDeviceConfiguration[i][j]
+                        if currentDeviceConfiguration[i][j].deviceType == .humidityActiveSensor {
+                            device.isOutOfRange = !(device.currentValue! >= parameter.value - parameter.deviation
+                            && device.currentValue! <= parameter.value + parameter.deviation)
+                        }
                     }
                 }
             }
         case "Acidity":
-            for i in 0...3 {
-                for j in 0...9 {
-                    var device = currentDeviceConfiguration[i][j]
-                    if currentDeviceConfiguration[i][j].deviceType == .acidityActiveSensor {
-                        device.isOutOfRange = device.currentValue! >= parameter.value - parameter.deviation
-                        && device.currentValue! <= parameter.value + parameter.deviation
+            if parameter.isActive {
+                for i in 0...3 {
+                    for j in 0...9 {
+                        var device = currentDeviceConfiguration[i][j]
+                        if currentDeviceConfiguration[i][j].deviceType == .acidityActiveSensor {
+                            device.isOutOfRange = !(device.currentValue! >= parameter.value - parameter.deviation
+                            && device.currentValue! <= parameter.value + parameter.deviation)
+                        }
                     }
                 }
             }
@@ -504,7 +587,7 @@ final class CultivationCycleManager: NSObject {
         if distance > 4 {
             temperature = 3
         } else {
-            temperature -= 8 * distance
+            temperature -= 6 * distance
         }
         return temperature
     }

@@ -30,6 +30,14 @@ class AddParameterViewController: NSViewController {
             showAlert(messageHeader: "Invalid Deviation", messageText: "Enter valid deviation")
             return
         }
+        for i in 0..<CultivationCycleManager.shared.currentParameterConfiguration.count {
+            let parameter = CultivationCycleManager.shared.currentParameterConfiguration[i]
+            if (startTime >= parameter.startTime && startTime < parameter.startTime + parameter.duration)
+                || (startTime + duration > startTime && startTime + duration <= parameter.startTime + parameter.duration) {
+                showAlert(messageHeader: "Invalid Start Time", messageText: "Two parameters cannot occur simultaneously! Enter valid start time")
+                return
+            }
+        }
         let parameter: Parameter = Parameter(name: parameterName, value: value, duration: Int(duration), deviation: deviation, startTime: Int(startTime))
         parentVC?.newParameter = parameter
         dismiss(self)

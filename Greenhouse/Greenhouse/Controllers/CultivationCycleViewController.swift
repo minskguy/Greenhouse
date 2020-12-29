@@ -14,6 +14,7 @@ class CultivationCycleViewController: NSViewController {
             parameters = CultivationCycleManager.shared.currentParameterConfiguration
             plantTextField?.stringValue = "Plant: \(self.plant.rawValue)"
             plantTextField?.sizeToFit()
+            cultivationCycleDurationTextField.stringValue = String(CultivationCycleManager.shared.cultivationCycleDuration)
             plantImageView.image = NSImage(named: self.plant.rawValue.lowercased())
             parametersTableView.reloadData()
         }
@@ -30,6 +31,7 @@ class CultivationCycleViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureParametersTableView()
+        parametersTableView.allowsMultipleSelection = false
         parameters = CultivationCycleManager.shared.currentParameterConfiguration
         plantTextField?.stringValue = "Plant: \(self.plant.rawValue)"
         plantTextField?.sizeToFit()
@@ -57,9 +59,12 @@ class CultivationCycleViewController: NSViewController {
     @IBAction func customModeButtonTapped(_ sender: NSButton) {
         if cultivationCycleDurationTextField.isEnabled {
             cultivationCycleDurationTextField.isEnabled = false
-            
+            addParameterButton.isEnabled = false
+            parametersTableView.doubleAction = nil
         } else {
             cultivationCycleDurationTextField.isEnabled = true
+            addParameterButton.isEnabled = true
+            parametersTableView.doubleAction = #selector(deleteActionTriggered)
         }
     }
     
@@ -67,6 +72,30 @@ class CultivationCycleViewController: NSViewController {
     func configureParametersTableView() {
         parametersTableView.delegate = self
         parametersTableView.dataSource = self
+        parametersTableView.target = self
+    }
+    
+    func deleteParameter() {
+        let selectedParameter: [Int] = Array(parametersTableView.selectedRowIndexes)
+        parameters.remove(at: selectedParameter[0])
+        parametersTableView.removeRows(at: IndexSet(selectedParameter), withAnimation: .effectFade)
+        parametersTableView.reloadData()
+    }
+    
+    @objc private func deleteActionTriggered() {
+        let alert = NSAlert()
+        alert.messageText = "Are you sure you want to delete this parameter?"
+        alert.alertStyle = .informational
+        alert.addButton(withTitle: "OK")
+        alert.addButton(withTitle: "Cancel")
+        let modalResult = alert.runModal()
+        
+        switch modalResult {
+        case .alertFirstButtonReturn:
+            deleteParameter()
+        default:
+            break
+        }
     }
     
 }

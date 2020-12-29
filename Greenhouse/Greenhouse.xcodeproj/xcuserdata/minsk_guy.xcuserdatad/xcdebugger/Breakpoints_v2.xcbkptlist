@@ -44,8 +44,8 @@
             filePath = "Greenhouse/Controllers/CultivationCycleViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -69,22 +69,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4B8421FB-F410-42E4-ADCE-044F3863E9DD"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Greenhouse/Manager/CultivatonCycleManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "268"
-            endingLineNumber = "268"
-            landmarkName = "checkDeviceStart(parameter:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "FD1C3D5C-8BC2-4AC2-85B7-BB29FE7433B1"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -92,8 +76,8 @@
             filePath = "Greenhouse/Manager/CultivatonCycleManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "333"
-            endingLineNumber = "333"
+            startingLineNumber = "414"
+            endingLineNumber = "414"
             landmarkName = "checkDeviceEnd(parameter:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -108,9 +92,360 @@
             filePath = "Greenhouse/Controllers/GreenhouseViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
             landmarkName = "collectionView(_:didSelectItemsAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F2A425A7-B484-4E64-95A9-6407E56FF101"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            condition = "cultivationCycleCurrentTime == 50"
+            continueAfterRunningActions = "No"
+            filePath = "Greenhouse/Manager/CultivatonCycleManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "startTimer()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BC1BFAE7-33C5-4CE7-8014-E912E49CF2B8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Greenhouse/Manager/CultivatonCycleManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "481"
+            endingLineNumber = "481"
+            landmarkName = "recalculateSensorsValues(device:isON:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BC1BFAE7-33C5-4CE7-8014-E912E49CF2B8 - 940aaa2e77d99dd9"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greenhouse.CultivationCycleManager.recalculateSensorsValues(device: Greenhouse.DeviceType, isON: Swift.Bool) -&gt; ()"
+                  moduleName = "Greenhouse"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/minsk_guy/Documents/GreenhouseApp/Greenhouse/Greenhouse/Manager/CultivatonCycleManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "408"
+                  endingLineNumber = "408"
+                  offsetFromSymbolStart = "6834">
+               </Location>
+               <Location
+                  uuid = "BC1BFAE7-33C5-4CE7-8014-E912E49CF2B8 - 940aaa2e77d99dd9"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greenhouse.CultivationCycleManager.recalculateSensorsValues(device: Greenhouse.DeviceType, isON: Swift.Bool) -&gt; ()"
+                  moduleName = "Greenhouse"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/minsk_guy/Documents/GreenhouseApp/Greenhouse/Greenhouse/Manager/CultivatonCycleManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "408"
+                  endingLineNumber = "408"
+                  offsetFromSymbolStart = "7042">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6A5CD2BC-FC3F-46DE-AE06-29A78BA5BA18"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Greenhouse/Manager/CultivatonCycleManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "316"
+            endingLineNumber = "316"
+            landmarkName = "checkDeviceStart(parameter:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6A5CD2BC-FC3F-46DE-AE06-29A78BA5BA18 - 106740a809235a87"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greenhouse.CultivationCycleManager.checkDeviceStart(parameter: inout Greenhouse.Parameter) -&gt; ()"
+                  moduleName = "Greenhouse"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/minsk_guy/Documents/GreenhouseApp/Greenhouse/Greenhouse/Manager/CultivatonCycleManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "243"
+                  endingLineNumber = "243"
+                  offsetFromSymbolStart = "786">
+               </Location>
+               <Location
+                  uuid = "6A5CD2BC-FC3F-46DE-AE06-29A78BA5BA18 - 106740a809235a87"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greenhouse.CultivationCycleManager.checkDeviceStart(parameter: inout Greenhouse.Parameter) -&gt; ()"
+                  moduleName = "Greenhouse"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/minsk_guy/Documents/GreenhouseApp/Greenhouse/Greenhouse/Manager/CultivatonCycleManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "243"
+                  endingLineNumber = "243"
+                  offsetFromSymbolStart = "829">
+               </Location>
+               <Location
+                  uuid = "6A5CD2BC-FC3F-46DE-AE06-29A78BA5BA18 - 106740a809235a87"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greenhouse.CultivationCycleManager.checkDeviceStart(parameter: inout Greenhouse.Parameter) -&gt; ()"
+                  moduleName = "Greenhouse"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/minsk_guy/Documents/GreenhouseApp/Greenhouse/Greenhouse/Manager/CultivatonCycleManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "243"
+                  endingLineNumber = "243"
+                  offsetFromSymbolStart = "4673">
+               </Location>
+               <Location
+                  uuid = "6A5CD2BC-FC3F-46DE-AE06-29A78BA5BA18 - 106740a809235a87"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greenhouse.CultivationCycleManager.checkDeviceStart(parameter: inout Greenhouse.Parameter) -&gt; ()"
+                  moduleName = "Greenhouse"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/minsk_guy/Documents/GreenhouseApp/Greenhouse/Greenhouse/Manager/CultivatonCycleManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "243"
+                  endingLineNumber = "243"
+                  offsetFromSymbolStart = "8517">
+               </Location>
+               <Location
+                  uuid = "6A5CD2BC-FC3F-46DE-AE06-29A78BA5BA18 - 106740a809235a87"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greenhouse.CultivationCycleManager.checkDeviceStart(parameter: inout Greenhouse.Parameter) -&gt; ()"
+                  moduleName = "Greenhouse"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/minsk_guy/Documents/GreenhouseApp/Greenhouse/Greenhouse/Manager/CultivatonCycleManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "243"
+                  endingLineNumber = "243"
+                  offsetFromSymbolStart = "10515">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "40483A79-C3BA-400E-A290-707AF33C327B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Greenhouse/Manager/CultivatonCycleManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "327"
+            endingLineNumber = "327"
+            landmarkName = "checkDeviceStart(parameter:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "37562D8C-566A-482B-B684-5A1006BF780B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Greenhouse/Manager/CultivatonCycleManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "590"
+            endingLineNumber = "590"
+            landmarkName = "calculateTemperatureValue(sensor:device:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A91D6236-F87D-40B0-AC86-3F3F20D1BB19"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            condition = "indexPath.item == 13"
+            continueAfterRunningActions = "No"
+            filePath = "Greenhouse/Controllers/GreenhouseViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "collectionView(_:itemForRepresentedObjectAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3D390578-19AE-4EB8-9196-E023F4C87692"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Greenhouse/Manager/CultivatonCycleManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "494"
+            endingLineNumber = "494"
+            landmarkName = "recalculateSensorsValues(device:isON:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3D390578-19AE-4EB8-9196-E023F4C87692 - 940aaa2e77d99dd9"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greenhouse.CultivationCycleManager.recalculateSensorsValues(device: Greenhouse.DeviceType, isON: Swift.Bool) -&gt; ()"
+                  moduleName = "Greenhouse"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/minsk_guy/Documents/GreenhouseApp/Greenhouse/Greenhouse/Manager/CultivatonCycleManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "421"
+                  endingLineNumber = "421"
+                  offsetFromSymbolStart = "13062">
+               </Location>
+               <Location
+                  uuid = "3D390578-19AE-4EB8-9196-E023F4C87692 - 940aaa2e77d99dd9"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greenhouse.CultivationCycleManager.recalculateSensorsValues(device: Greenhouse.DeviceType, isON: Swift.Bool) -&gt; ()"
+                  moduleName = "Greenhouse"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/minsk_guy/Documents/GreenhouseApp/Greenhouse/Greenhouse/Manager/CultivatonCycleManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "421"
+                  endingLineNumber = "421"
+                  offsetFromSymbolStart = "13270">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9CF26AED-47C4-40FD-B559-F82494F98714"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Greenhouse/Manager/CultivatonCycleManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "402"
+            endingLineNumber = "402"
+            landmarkName = "checkDeviceEnd(parameter:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BE9270E7-1547-4191-A6BB-9DB08A432D4C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Greenhouse/Manager/CultivatonCycleManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "476"
+            endingLineNumber = "476"
+            landmarkName = "recalculateSensorsValues(device:isON:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1FCF762C-3822-4BA6-AE19-A6D640E9451D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Greenhouse/Manager/CultivatonCycleManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "505"
+            endingLineNumber = "505"
+            landmarkName = "recalculateSensorsValues(device:isON:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AE9BCE17-932F-4CEC-9D46-FB73336753B5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Greenhouse/Manager/CultivatonCycleManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "startTimer()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5F34BFC2-2A2A-4847-90E5-634C529D56E2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Greenhouse/Controllers/GreenhouseViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "timeDidChange(notification:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D944FBD2-6BD8-4E5E-A6AF-5ABBC5BCB9DF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Greenhouse/Manager/CultivatonCycleManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "303"
+            endingLineNumber = "303"
+            landmarkName = "activeSensorsRangeCheck(parameter:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
