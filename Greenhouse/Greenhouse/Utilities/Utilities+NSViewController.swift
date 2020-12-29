@@ -1,11 +1,3 @@
-//
-//  Utilities+NSViewController.swift
-//  Greenhouse
-//
-//  Created by Марк Курлович on 12/24/20.
-//  Copyright © 2020 Марк Курлович. All rights reserved.
-//
-
 import Cocoa
 
 extension NSViewController {

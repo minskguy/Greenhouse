@@ -1,16 +1,9 @@
-//
-//  TemperatureActiveSensor.swift
-//  Greenhouse
-//
-//  Created by Марк Курлович on 12/4/20.
-//  Copyright © 2020 Марк Курлович. All rights reserved.
-//
-
 import Foundation
 
-final class TemperatureActiveSensor: SensorProtocol {
-    var temperature = 25
-    func show() {
-    
-    }
+final class TemperatureActiveSensor: Device {
+    var isOutOfRange: Bool? = false
+    var observedSensors: [IndexPath : Double]?
+    var currentValue: Double? = 25
+    var isActive: Bool = true
+    var deviceType: DeviceType = .temperatureActiveSensor
 }

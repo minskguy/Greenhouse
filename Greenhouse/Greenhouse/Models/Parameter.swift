@@ -1,16 +1,8 @@
-//
-//  Parameter.swift
-//  Greenhouse
-//
-//  Created by Марк Курлович on 12/4/20.
-//  Copyright © 2020 Марк Курлович. All rights reserved.
-//
-
 import Foundation
 
 struct Parameter {
     var parameterName: String
-    var value: Int
+    var value: Double
     var duration: Int
     var deviation: Double
     var startTime: Int
@@ -25,7 +17,7 @@ struct Parameter {
         isActive = false
     }
     
-    init(name: String, value: Int, duration: Int, deviation: Double,
+    init(name: String, value: Double, duration: Int, deviation: Double,
          startTime: Int) {
         self.parameterName = name
         self.value = value

@@ -9,9 +9,8 @@
 /* Begin PBXBuildFile section */
 		973341732594EDD700A18AD2 /* Utilities+NSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973341722594EDD700A18AD2 /* Utilities+NSViewController.swift */; };
 		9733417525950F0900A18AD2 /* Plants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9733417425950F0900A18AD2 /* Plants.swift */; };
-		975DF8BB2579163400093800 /* Devices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF8BA2579163400093800 /* Devices.swift */; };
+		975DF8BB2579163400093800 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF8BA2579163400093800 /* DeviceType.swift */; };
 		975DF8C1257A433F00093800 /* Heater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF8C0257A433F00093800 /* Heater.swift */; };
-		975DF8C3257A43D300093800 /* SensorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF8C2257A43D300093800 /* SensorProtocol.swift */; };
 		975DF8C6257A45CE00093800 /* SourceOfLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF8C5257A45CE00093800 /* SourceOfLight.swift */; };
 		975DF8C8257A45DF00093800 /* Conditioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF8C7257A45DF00093800 /* Conditioner.swift */; };
 		975DF8CA257A462000093800 /* Humidifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF8C9257A462000093800 /* Humidifier.swift */; };
@@ -36,14 +35,15 @@
 		97D133BE2578483B005A3145 /* AddDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D133BD2578483B005A3145 /* AddDeviceViewController.swift */; };
 		97D133C125786A9A005A3145 /* DeviceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D133BF25786A99005A3145 /* DeviceItem.swift */; };
 		97D133C225786A9A005A3145 /* DeviceItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97D133C025786A9A005A3145 /* DeviceItem.xib */; };
+		97FAC1DC25960AEA00EA9507 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FAC1DB25960AEA00EA9507 /* Device.swift */; };
+		97FAC1DE259610F500EA9507 /* None.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FAC1DD259610F500EA9507 /* None.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		973341722594EDD700A18AD2 /* Utilities+NSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Utilities+NSViewController.swift"; sourceTree = "<group>"; };
 		9733417425950F0900A18AD2 /* Plants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plants.swift; sourceTree = "<group>"; };
-		975DF8BA2579163400093800 /* Devices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Devices.swift; sourceTree = "<group>"; };
+		975DF8BA2579163400093800 /* DeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
 		975DF8C0257A433F00093800 /* Heater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heater.swift; sourceTree = "<group>"; };
-		975DF8C2257A43D300093800 /* SensorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorProtocol.swift; sourceTree = "<group>"; };
 		975DF8C5257A45CE00093800 /* SourceOfLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceOfLight.swift; sourceTree = "<group>"; };
 		975DF8C7257A45DF00093800 /* Conditioner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conditioner.swift; sourceTree = "<group>"; };
 		975DF8C9257A462000093800 /* Humidifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Humidifier.swift; sourceTree = "<group>"; };
@@ -71,6 +71,8 @@
 		97D133BD2578483B005A3145 /* AddDeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDeviceViewController.swift; sourceTree = "<group>"; };
 		97D133BF25786A99005A3145 /* DeviceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceItem.swift; sourceTree = "<group>"; };
 		97D133C025786A9A005A3145 /* DeviceItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceItem.xib; sourceTree = "<group>"; };
+		97FAC1DB25960AEA00EA9507 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		97FAC1DD259610F500EA9507 /* None.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = None.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,11 +98,10 @@
 			isa = PBXGroup;
 			children = (
 				975DF8C4257A44BC00093800 /* Devices */,
-				975DF8BA2579163400093800 /* Devices.swift */,
-				97D133BF25786A99005A3145 /* DeviceItem.swift */,
-				97D133C025786A9A005A3145 /* DeviceItem.xib */,
+				975DF8BA2579163400093800 /* DeviceType.swift */,
 				975DF8DF257A7B1500093800 /* Parameter.swift */,
 				9733417425950F0900A18AD2 /* Plants.swift */,
+				97FAC1DB25960AEA00EA9507 /* Device.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -108,6 +109,8 @@
 		975DF8BD257A426000093800 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				97D133BF25786A99005A3145 /* DeviceItem.swift */,
+				97D133C025786A9A005A3145 /* DeviceItem.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 				975DF8C7257A45DF00093800 /* Conditioner.swift */,
 				975DF8C9257A462000093800 /* Humidifier.swift */,
 				975DF8CB257A46AD00093800 /* FertilizerDispenser.swift */,
+				97FAC1DD259610F500EA9507 /* None.swift */,
 			);
 			path = Devices;
 			sourceTree = "<group>";
@@ -151,7 +155,6 @@
 		975DF8D3257A470A00093800 /* Sensors */ = {
 			isa = PBXGroup;
 			children = (
-				975DF8C2257A43D300093800 /* SensorProtocol.swift */,
 				975DF8D5257A51AC00093800 /* Active */,
 				975DF8D4257A51A600093800 /* Passive */,
 			);
@@ -290,8 +293,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				97D133BA257847B5005A3145 /* CultivationCycleViewController.swift in Sources */,
+				97FAC1DE259610F500EA9507 /* None.swift in Sources */,
 				975DF8CA257A462000093800 /* Humidifier.swift in Sources */,
 				97D133A6257841B8005A3145 /* AppDelegate.swift in Sources */,
+				97FAC1DC25960AEA00EA9507 /* Device.swift in Sources */,
 				975DF8CE257A46B800093800 /* AcidityPassiveSensor.swift in Sources */,
 				975DF8DB257A520200093800 /* TemperatureActiveSensor.swift in Sources */,
 				97D133BC25784825005A3145 /* GreenhouseViewController.swift in Sources */,
@@ -307,12 +312,11 @@
 				975DF8C8257A45DF00093800 /* Conditioner.swift in Sources */,
 				975DF8D9257A51F200093800 /* HumidityActiveSensor.swift in Sources */,
 				975DF8FC2584FC3200093800 /* AddParameterViewController.swift in Sources */,
-				975DF8C3257A43D300093800 /* SensorProtocol.swift in Sources */,
 				97D133C125786A9A005A3145 /* DeviceItem.swift in Sources */,
 				975DF8C1257A433F00093800 /* Heater.swift in Sources */,
 				9733417525950F0900A18AD2 /* Plants.swift in Sources */,
 				97D133B82578469D005A3145 /* LaunchViewController.swift in Sources */,
-				975DF8BB2579163400093800 /* Devices.swift in Sources */,
+				975DF8BB2579163400093800 /* DeviceType.swift in Sources */,
 				975DF8FA2584FC2000093800 /* ChangePlantViewController.swift in Sources */,
 				975DF8D2257A46E100093800 /* TemperaturePassiveSensor.swift in Sources */,
 			);

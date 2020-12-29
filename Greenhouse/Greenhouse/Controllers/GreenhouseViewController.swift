@@ -1,24 +1,45 @@
-//
-//  GreenhouseViewController.swift
-//  Greenhouse
-//
-//  Created by Марк Курлович on 12/3/20.
-//  Copyright © 2020 Марк Курлович. All rights reserved.
-//
-
 import Cocoa
 
 typealias AddedDevice = (String, Int, Int)
 
 class GreenhouseViewController: NSViewController {
     
-    var devices = [[Devices]]()
+    var devices = [[Device]]()
     var newDevice: AddedDevice? {
         didSet {
-            let results = Devices.allCases.filter {
+            let results = DeviceType.allCases.filter {
                 $0.rawValue.lowercased() == self.newDevice!.0.lowercased().replacingOccurrences(of: " ", with: "")
             }
-            devices[self.newDevice!.1][self.newDevice!.2] = results.first!
+            var device: Device
+            switch results.first! {
+            case .heater:
+                device = Heater()
+            case .sourceOfLight:
+                device = SourceOfLight()
+            case .conditioner:
+                device = Conditioner()
+            case .humidifier:
+                device = Humidifier()
+            case .fertilizerDispenser:
+                device = FertilizerDispenser()
+            case .acidityActiveSensor:
+                device = AcidityActiveSensor()
+            case .acidityPassiveSensor:
+                device = AcidityPassiveSensor()
+            case .humidityActiveSensor:
+                device = HumidityActiveSensor()
+            case .humidityPassiveSensor:
+                device = HumidityPassiveSensor()
+            case .temperatureActiveSensor:
+                device = TemperatureActiveSensor()
+            case .temperaturePassiveSensor:
+                device = TemperaturePassiveSensor()
+            case .none:
+                device = None()
+            }
+            devices[self.newDevice!.1][self.newDevice!.2] = device
+            CultivationCycleManager.shared.currentDeviceConfiguration[self.newDevice!.1][self.newDevice!.2] = device
+            cultivationTextField.stringValue = "\(CultivationCycleManager.shared.currentPlant.rawValue), cycle start - 13.11.2020, lasted: \(CultivationCycleManager.shared.cultivationCycleCurrentTime) hours"
             devicesCollectionView.reloadData()
         }
     }
@@ -28,6 +49,7 @@ class GreenhouseViewController: NSViewController {
     @IBOutlet weak var cultivationTextField: NSTextField!
     @IBOutlet weak var plantImageView: NSImageView!
     @IBOutlet weak var headerColorWell: NSColorWell!
+    @IBOutlet weak var addDeviceButton: NSButton!
     
     override init(nibName nibNameOrNil: NSNib.Name?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -44,8 +66,10 @@ class GreenhouseViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        cultivationTextField.stringValue = "\(CultivationCycleManager.shared.currentPlant.rawValue), cycle start - 13.11.2020, lasted: \(CultivationCycleManager.shared.cultivationCycleCurrentTime) hours"
+        devicesCollectionView.allowsMultipleSelection = false
+        cultivationTextField.stringValue = "\(CultivationCycleManager.shared.currentPlant.rawValue), cycle start - \(CultivationCycleManager.shared.cultivationCycleCurrentDate), lasted: \(CultivationCycleManager.shared.cultivationCycleCurrentTime) hours"
         plantImageView.image = NSImage(named: CultivationCycleManager.shared.currentPlant.rawValue.lowercased())
+        addDeviceButton.isEnabled = !CultivationCycleManager.shared.isInProcess
         configureDevicesCollectionView()
         devices = CultivationCycleManager.shared.currentDeviceConfiguration
         changeBackgroundColor()
@@ -64,6 +88,7 @@ class GreenhouseViewController: NSViewController {
     
     func configureDevicesCollectionView() {
         devicesCollectionView.dataSource = self
+        devicesCollectionView.delegate = self
         devicesCollectionView.register(NSNib(nibNamed: "DeviceItem", bundle: nil), forItemWithIdentifier: deviceItemIdentifier)
         configureGridLayout()
     }
@@ -75,43 +100,8 @@ class GreenhouseViewController: NSViewController {
         gridLayout.maximumNumberOfColumns = 10
         gridLayout.maximumNumberOfRows = 4
         gridLayout.margins = NSEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        
         devicesCollectionView.collectionViewLayout = gridLayout
-    }
-}
-
-extension GreenhouseViewController: NSCollectionViewDataSource {
-    func numberOfSections(in collectionView: NSCollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 40
-    }
-    
-    func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-        guard let item = collectionView.makeItem(withIdentifier: deviceItemIdentifier, for: indexPath) as? DeviceItem else { return NSCollectionViewItem() }
-        item.parameterLabel?.stringValue = ""
-        let device = devices[indexPath.item / 10][indexPath.item % 10]
-        switch device {
-        case .acidityActiveSensor:
-            item.parameter = 34
-        case .acidityPassiveSensor:
-            item.parameter = 34
-        case .temperatureActiveSensor:
-            item.parameter = 25
-        case .temperaturePassiveSensor:
-            item.parameter = 25
-        case .humidityActiveSensor:
-            item.parameter = 55
-        case .humidityPassiveSensor:
-            item.parameter = 55
-        default:
-            item.parameter = nil
-            break
-        }
-        item.addLabel()
-        item.setImage(image: device.getImage())
-        return item
     }
     
     func changeBackgroundColor() {
@@ -131,9 +121,64 @@ extension GreenhouseViewController: NSCollectionViewDataSource {
     
     @objc func timeDidChange(notification: NSNotification) {
         guard let time = notification.object as? Int else { return }
-        cultivationTextField.stringValue = "\(CultivationCycleManager.shared.currentPlant.rawValue), cycle start - 13.11.2020, lasted: \(time) hours"
+        cultivationTextField.stringValue = "\(CultivationCycleManager.shared.currentPlant.rawValue), cycle start - \(CultivationCycleManager.shared.cultivationCycleCurrentDate), lasted: \(time) hours"
+        devicesCollectionView.reloadItems(at: Set(CultivationCycleManager.shared.modifiedDevices))
     }
 }
 
+extension GreenhouseViewController: NSCollectionViewDataSource {
+    func numberOfSections(in collectionView: NSCollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 40
+    }
+    
+    func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
+        guard let item = collectionView.makeItem(withIdentifier: deviceItemIdentifier, for: indexPath) as? DeviceItem else { return NSCollectionViewItem() }
+        let device = devices[indexPath.item / 10][indexPath.item % 10]
+        guard let value = device.currentValue else {
+            item.setImage(image: device.deviceType.getImage())
+            if !device.isActive {
+                item.imageView?.image = NSImage(named: "\(device.deviceType.rawValue)Gray")
+            } else {
+                item.imageView?.image = NSImage(named: device.deviceType.rawValue)
+            }
+            return item
+        }
+        item.parameterLabel.stringValue = String(Int(value))
+        item.parameterLabel.isHidden = false
+        item.parameterLabel.sizeToFit()
+        item.setImage(image: device.deviceType.getImage())
+        return item
+    }
+}
 
-
+extension GreenhouseViewController: NSCollectionViewDelegate {
+    func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
+        indexPaths.forEach() { indexPath in
+            guard let item = collectionView.item(at: indexPath) as? DeviceItem else { return }
+            item.setBackgroundColor(color: NSColor.blue.cgColor)
+            let device = CultivationCycleManager.shared.currentDeviceConfiguration[indexPath.item / 10][indexPath.item % 10]
+            if device.deviceType == .acidityActiveSensor
+            || device.deviceType == .humidityActiveSensor
+                || device.deviceType == .temperatureActiveSensor {
+                if device.isOutOfRange! {
+                    item.setBackgroundColor(color: NSColor.red.cgColor)
+                } else {
+                    item.setBackgroundColor(color: NSColor.green.cgColor)
+                }
+            }
+            
+        }
+    }
+    
+    func collectionView(_ collectionView: NSCollectionView, didDeselectItemsAt indexPaths: Set<IndexPath>) {
+        indexPaths.forEach() { indexPath in
+            guard let item = collectionView.item(at: indexPath) as? DeviceItem else { return }
+            item.setBackgroundColor(color: NSColor.gray.cgColor)
+            
+        }
+    }
+}

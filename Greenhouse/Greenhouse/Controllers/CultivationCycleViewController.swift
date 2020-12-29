@@ -1,11 +1,3 @@
-//
-//  CultivationCycleViewController.swift
-//  Greenhouse
-//
-//  Created by Марк Курлович on 12/3/20.
-//  Copyright © 2020 Марк Курлович. All rights reserved.
-//
-
 import Cocoa
 
 class CultivationCycleViewController: NSViewController {
@@ -31,6 +23,9 @@ class CultivationCycleViewController: NSViewController {
     @IBOutlet weak var plantTextField: NSTextField!
     @IBOutlet weak var plantImageView: NSImageView!
     @IBOutlet weak var cultivationCycleDurationTextField: NSTextField!
+    @IBOutlet weak var changePlantButton: NSButton!
+    @IBOutlet weak var addParameterButton: NSButton!
+    @IBOutlet weak var customModeButton: NSButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +34,8 @@ class CultivationCycleViewController: NSViewController {
         plantTextField?.stringValue = "Plant: \(self.plant.rawValue)"
         plantTextField?.sizeToFit()
         plantImageView.image = NSImage(named: self.plant.rawValue.lowercased())
+        changePlantButton.isEnabled = !CultivationCycleManager.shared.isInProcess
+        customModeButton.isEnabled = !CultivationCycleManager.shared.isInProcess
         parametersTableView.reloadData()
     }
     @IBAction func backButtonTapped(_ sender: NSButton) {
@@ -60,6 +57,7 @@ class CultivationCycleViewController: NSViewController {
     @IBAction func customModeButtonTapped(_ sender: NSButton) {
         if cultivationCycleDurationTextField.isEnabled {
             cultivationCycleDurationTextField.isEnabled = false
+            
         } else {
             cultivationCycleDurationTextField.isEnabled = true
         }
@@ -106,4 +104,5 @@ extension CultivationCycleViewController: NSTableViewDelegate {
         }
         return nil
     }
+    
 }

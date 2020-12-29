@@ -1,11 +1,3 @@
-//
-//  AddParameterViewController.swift
-//  Greenhouse
-//
-//  Created by Марк Курлович on 12/12/20.
-//  Copyright © 2020 Марк Курлович. All rights reserved.
-//
-
 import Cocoa
 
 class AddParameterViewController: NSViewController {
@@ -23,7 +15,7 @@ class AddParameterViewController: NSViewController {
             return
         }
         
-        guard let value = valueTextField?.intValue, let duration =
+        guard let value = valueTextField?.doubleValue, let duration =
             durationTextField?.intValue, let startTime = startTimeTextField?.intValue, let deviation = deviationTextField?.doubleValue else { return }
         if (value <= 0 || value > 100) {
             showAlert(messageHeader: "Invalid Value", messageText: "Enter valid value")
@@ -38,7 +30,7 @@ class AddParameterViewController: NSViewController {
             showAlert(messageHeader: "Invalid Deviation", messageText: "Enter valid deviation")
             return
         }
-        let parameter: Parameter = Parameter(name: parameterName, value: Int(value), duration: Int(duration), deviation: deviation, startTime: Int(startTime))
+        let parameter: Parameter = Parameter(name: parameterName, value: value, duration: Int(duration), deviation: deviation, startTime: Int(startTime))
         parentVC?.newParameter = parameter
         dismiss(self)
     }

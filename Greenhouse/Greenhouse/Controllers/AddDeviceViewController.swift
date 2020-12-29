@@ -1,11 +1,3 @@
-//
-//  AddDeviceViewController.swift
-//  Greenhouse
-//
-//  Created by Марк Курлович on 12/3/20.
-//  Copyright © 2020 Марк Курлович. All rights reserved.
-//
-
 import Cocoa
 
 class AddDeviceViewController: NSViewController {
@@ -34,7 +26,7 @@ class AddDeviceViewController: NSViewController {
             showAlert(messageHeader: "Invalid Column Value", messageText: "Enter valid column value")
             return
         }
-        let device: AddedDevice = (deviceType, (Int(column) ?? -1), (Int(column) ?? -1))
+        let device: AddedDevice = (deviceType, (Int(row) ?? -1), (Int(column) ?? -1))
         parentVC?.newDevice = device
         dismiss(self)
     }

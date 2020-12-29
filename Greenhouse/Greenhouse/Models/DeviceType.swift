@@ -1,14 +1,6 @@
-//
-//  DeviceInfo.swift
-//  Greenhouse
-//
-//  Created by Марк Курлович on 12/3/20.
-//  Copyright © 2020 Марк Курлович. All rights reserved.
-//
-
 import Cocoa
 
-enum Devices: String, CaseIterable {
+enum DeviceType: String, CaseIterable {
     case none = ""
     case heater = "heater"
     case sourceOfLight = "sourceOfLight"

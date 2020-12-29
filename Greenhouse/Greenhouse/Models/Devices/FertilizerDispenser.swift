@@ -1,13 +1,9 @@
-//
-//  FertilizerDispenser.swift
-//  Greenhouse
-//
-//  Created by Марк Курлович on 12/4/20.
-//  Copyright © 2020 Марк Курлович. All rights reserved.
-//
-
 import Foundation
 
-final class FertilizerDispenser {
-    
+final class FertilizerDispenser: Device {
+    var isOutOfRange: Bool?
+    var observedSensors: [IndexPath : Double]? = [:]
+    var currentValue: Double? = nil
+    var isActive: Bool = false
+    var deviceType: DeviceType = .fertilizerDispenser
 }
